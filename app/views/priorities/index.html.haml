@@ -1,0 +1,22 @@
+.row
+  .three.colums
+    %h1 Priorities<span class="dotx">.X</span>
+    - @priorities.each do |priority|
+      .priority.color.hide= priority.color
+      .priority= priority.name
+      .clear
+  .six.columns
+    .controls
+      .new
+        = button_tag 'New priority', :id => 'new_priority', :class => 'button success radius tiny'
+      .form.hide
+        = form_tag do
+          = label_tag 'name'
+          = text_field_tag 'name'
+          = label_tag 'color'
+          = text_field_tag 'color', nil, :class => 'minicolors'
+          = label_tag 'value'
+          = text_field_tag 'value'
+          = link_to('Cancel','#', :id => 'cancel_priority', :class => 'button alert radius tiny')
+          = submit_tag 'Create New Priority', :id => 'create_priority', :class => 'button radius tiny'
+  .three.columns

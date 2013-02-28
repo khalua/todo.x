@@ -1,0 +1,34 @@
+  <!-- Navigation -->
+
+  <nav class="top-bar fixed">
+    <ul>
+      <li class="name"><h1><a href="/">Todo<span class="dotx">.X</span></a></h1></li>
+      <li class="toggle-topbar"><a href="#"></a></li>
+    </ul>
+
+    <section>
+      <ul class="left">
+        <li><a href="#">Link</a></li>
+        <li><%= link_to('Priorities', priorities_path) %></li>
+        <li><a href="#">Link</a></li>
+      </ul>
+
+      <ul class="right">
+        <% if @auth.present? %>
+          <li><%= link_to('Logout: ' + @auth.name, login_path, :method => :delete, :confirm => 'see ya?') %></li>
+        <% else %>
+          <li><%= link_to("Log in", login_path) %></li>
+        <% end %>
+        <li class="has-dropdown">
+          <a href="#">Users Admin</a>
+
+          <ul class="dropdown">
+            <li><%= link_to("Create Account", new_user_path) %></li>
+            <li><%= link_to("Show Users", users_path) %> </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </nav>
+
+  <!-- End Navigation -->

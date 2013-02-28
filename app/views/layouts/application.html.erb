@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo.X</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<%= render :partial => "layouts/nav" %>
+<body>
+
+  <% if flash[:notice].present? %>
+  <div class='row'>
+    <div class="five columns alert-box alert">
+      <%= flash[:notice] %>
+    </div>
+    <div class="seven columns"></div>
+  </div>
+  <% end %>
+
+<%= yield %>
+
+
+<%= render :partial => "layouts/footer" %>
+</body>
+</html>
