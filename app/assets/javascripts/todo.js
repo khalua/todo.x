@@ -34,15 +34,18 @@ $(function() {
 
   function add_color_boxes()
   {
-    var x = $('.color');
-    console.log(x);
-    $('.color').each(change_text_to_color);
+    //var x = $('.color');
+    //console.log(x);
+    //$('.color').each(change_text_to_color);
+    var colors = $('.color');
+    _.each(colors, change_text_to_color);
 
   }
 
-  function change_text_to_color(index, element)
+  function change_text_to_color(object)
   {
-    var box = $(element);
+    //console.log(object);
+    var box = $(object);
     var color = box.text();
 
     box.removeClass('hide');

@@ -1,10 +1,21 @@
 .row
-  .three.colums
+  .one.columns
     %h1 Priorities<span class="dotx">.X</span>
-    - @priorities.each do |priority|
-      .priority.color.hide= priority.color
-      .priority= priority.name
-      .clear
+  .eleven.columns
+
+.row
+  .one.columns
+  .four.columns
+    %table
+      %thead
+        %tr
+          %th Color
+          %th Name
+      %tbody
+        - @priorities.each do |priority|
+          %tr
+            %td.priority.color.hide= priority.color
+            %td.priority= priority.name
   .six.columns
     .controls
       .new
@@ -19,4 +30,4 @@
           = text_field_tag 'value'
           = link_to('Cancel','#', :id => 'cancel_priority', :class => 'button alert radius tiny')
           = submit_tag 'Create New Priority', :id => 'create_priority', :class => 'button radius tiny'
-  .three.columns
+  .one.columns
